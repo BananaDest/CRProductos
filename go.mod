@@ -1,4 +1,4 @@
-module main
+module crproductos
 
 go 1.23.1
 
