@@ -1,0 +1,63 @@
+
+# Binaries for programs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of the go command
+/build/
+bin/
+
+# Vendor directory if using Go Modules
+/vendor/
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Test binary
+*.out
+
+# Dependency directories
+# These can be ignored if you're using Go Modules (which most Go projects use now)
+Godeps/
+
+# IDE and editor specific files
+.idea/
+*.swp
+.vscode/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage files
+*.cover
+*.cov
+*.coverage
+coverage.out
+
+# Configuration and env files
+config.development.env
+config.production.env
+.env
+.env.*
+
+# Archive files
+*.zip
+*.tar.gz
+*.tar
+*.gz
+*.rar
+*.7z
+*.bz2
+
+# Git-specific ignore files (optional)
+!.gitignore
