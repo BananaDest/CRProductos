@@ -5,6 +5,7 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"errors"
+	"fmt"
 )
 
 type Product struct {
@@ -59,4 +60,17 @@ func (p *Product) ToJSON() ProductResponse {
 		Unit:     unit,
 		Stores:   p.Stores,
 	}
+}
+
+func (p *ProductResponse) ToString() string {
+	storesString := "{"
+	for key, storeValue := range *p.Stores {
+		storesString = storesString + fmt.Sprintf("%+v: %+v", key, storeValue) + ", "
+	}
+	if len(storesString) >= 3 {
+		storesString = storesString[:len(storesString)-2]
+	}
+	storesString += "}"
+	productString := fmt.Sprintf("{Id: %d: Name: %s, Quantity: %f, Unit: %s, Stores: %s}", p.Id, *p.Name, *p.Quantity, *p.Unit, storesString)
+	return productString
 }
